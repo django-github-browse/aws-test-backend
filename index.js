@@ -35,6 +35,14 @@ app.use("/aws-test-backend",(req,res,next) => {
     })(req,res,next)
 })
 
+app.use("/react-backend-test1",(req,res,next) => {
+    createProxyMiddleware({
+        target: process.env.BASE_API_URL_REACT-BACKEND-TEST1,
+        changeOrigin: true,
+        pathRewrite: {[`^/react-backend-test1`]: "",},
+    })(req,res,next)
+})
+
 const port = process.env.PORT || 5050
 app.listen(port,() => {
     console.log(`Listening on localhost port ${port}`)
