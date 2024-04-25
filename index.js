@@ -37,7 +37,7 @@ app.use("/aws-test-backend",(req,res,next) => {
 
 app.use("/react-backend-test1",(req,res,next) => {
     createProxyMiddleware({
-        target: process.env.BASE_API_URL_REACT-BACKEND-TEST1,
+        target: process.env.BASE_API_URL_REACT_BACKEND_TEST1,
         changeOrigin: true,
         pathRewrite: {[`^/react-backend-test1`]: "",},
     })(req,res,next)
